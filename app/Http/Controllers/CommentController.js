@@ -3,21 +3,31 @@ const Comment = use('App/Model/Comment')
 
 class CommentController {
 
-  * create () {}
+  * create () {
+    // let user = request.authUser
+  }
 
   * index () {
 
-// retrieve comments for a link
+// retrieve all comments for a link
+
+  }
+
+  * show () {
+
+// retrieve one comment for a link
 
   }
 
   * update () {
-
+// let user = request.authUser
 // user id's must match
 
   }
 
-  * delete () {}
+  * delete () {
+    // let user = request.authUser
+  }
 
 }
 
