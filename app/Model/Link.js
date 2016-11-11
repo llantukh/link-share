@@ -9,7 +9,7 @@ class Link extends Lucid {
   }
 
   comments () {
-    return.this.hasMany('App/Model/Comment')
+    return this.hasMany('App/Model/Comment')
   }
 
 }
