@@ -32,6 +32,7 @@ Request body must include:
 GET http://localhost:3333/links
 
 ####To look at all comments on a specific link:
+GET http://localhost:3333/comments
 Request body must include:
 * link_id
 * user_id
