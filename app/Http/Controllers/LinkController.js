@@ -3,22 +3,19 @@ const Link = use('App/Model/Link')
 
 class LinkController {
 
-  * create () {
+  * create (request, response) {
     let user = request.authUser
-    let data = request.only('title', 'destination')
-
-
+    let data = request.only('title', 'destination', 'user_id')
+    data.user_id = user.id
     let link = yield Link.create(data)
 
-
+    response.status(201).json(link)
   }
 
-  * index () {
-    // let link = link.findby('post_id', 'id')
-    // let comments = link.comments()
+  * index (request, response) {
+    let links = yield Link.query().select("*").orderBy("created_at","desc")
 
-    // find all links by specific user and order by created at
-    // find all comments for that link? why is this here and in the comment controller?
+    response.json(links)
   }
 
 }
