@@ -21,11 +21,11 @@ Route.on('/').render('welcome')
 
 // Routes for users:
 Route.post('/users', 'UserController.register')
-Route.post('/users','UserController.login')
+Route.post('/login','UserController.login')
 
 // Routes for links/posts:
 Route.post('/links','LinkController.create').middleware('auth')
-Route.get('/links/:id','LinkController.index')
+Route.get('/links/','LinkController.index')
 
 // Routes for comments:
 Route.post('/comments','CommentController.create').middleware('auth')
