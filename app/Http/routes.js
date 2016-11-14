@@ -18,3 +18,15 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+// Routes for users:
+Route.post('/users', 'UserController.register')
+Route.post('/users','UserController.login')
+
+// Routes for links/posts:
+Route.post('/links','LinkController.create').middleware('auth')
+Route.get('/links/:id','LinkController.index')
+
+// Routes for comments:
+Route.post('/comments','CommentController.create').middleware('auth')
+Route.get('/comments','CommentController.index')
