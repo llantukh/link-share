@@ -3,14 +3,19 @@ const Comment = use('App/Model/Comment')
 
 class CommentController {
 
-  * create () {
-    // let user = request.authUser
+  * create (request, response) {
+    let user = request.authUser
+    let data = request.only('link_id', 'user_id', 'content')
+    let comment = yield Comment.create(data)
+
+    response.status(201).json(comment)
   }
 
-  * index () {
+  * index (request, response) {
+    let data = request.only('user_id','link_id')
+    let comments = yield Comment.query().where(data)
 
-// retrieve all comments for a link
-
+    response.json(comments)
   }
 
 }
