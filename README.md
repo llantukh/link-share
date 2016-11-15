@@ -4,6 +4,7 @@
 
 ####To create an account:
 POST http://localhost:3333/users
+
 Request body must include:
 * username
 * email address
@@ -12,8 +13,10 @@ Request body must include:
 
 ####To post a link:
 POST http://localhost:3333/links
+
 Request header must include:
 * Autorization with API token
+
 Request body must include:
 * user_id
 * title
@@ -21,8 +24,10 @@ Request body must include:
 
 ####To post a comment:
 POST http://localhost:3333/comments
+
 Request header must include:
 * Autorization with API token
+
 Request body must include:
 * link_id
 * user_id
@@ -33,6 +38,7 @@ GET http://localhost:3333/links
 
 ####To look at all comments on a specific link:
 GET http://localhost:3333/comments
+
 Request body must include:
 * link_id
 * user_id
